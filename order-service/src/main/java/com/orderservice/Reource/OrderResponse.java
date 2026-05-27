@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderResponse {
     private Integer orderId;
-    private OrderStatus orderStatus;
+    private OrderStatus status;
 }

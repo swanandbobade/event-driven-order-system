@@ -1,6 +1,6 @@
 package com.orderservice.Producer;
 
-import com.orderservice.Model.OrderCreatedEvent;
+import com.orderservice.Model.OrderEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -13,10 +13,10 @@ public class OrderProducer {
 
     private static final String TOPIC = "order-created";
 
-    private final KafkaTemplate<String, OrderCreatedEvent> kafkaTemplate;
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
-    public void publishOrderCreatedEvent(OrderCreatedEvent event) {
-        log.info("Publishing order created event: {}", event);
+    public void publishOrderEvent(OrderEvent event) {
+        log.info("Publishing order event: {}", event);
         kafkaTemplate.send(TOPIC, event);
     }
 }

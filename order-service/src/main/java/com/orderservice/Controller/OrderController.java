@@ -1,6 +1,7 @@
 package com.orderservice.Controller;
 
 import com.orderservice.Model.OrderRequestDto;
+import com.orderservice.Reource.OrderDetailsResponse;
 import com.orderservice.Reource.OrderResponse;
 import com.orderservice.Service.Impl.OrderServiceImpl;
 import com.orderservice.Service.OrderService;
@@ -16,29 +17,25 @@ import java.util.List;
 public class OrderController {
 
     @Autowired
-    private OrderServiceImpl orderService;
+    private OrderService orderService;
 
-    //Place order
     @PostMapping
     public ResponseEntity<OrderResponse> newOrder(@Valid @RequestBody OrderRequestDto order) {
         return ResponseEntity.ok(orderService.newOrder(order));
     }
 
-    //View order by id
     @GetMapping("/{id}")
-    public ResponseEntity<OrderResponse> getOrderByID(@RequestParam Integer id) {
-        return null;
+    public ResponseEntity<OrderDetailsResponse> getOrderByID(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.getOrderById(id));
     }
 
-    //Cancel order
-    @GetMapping("/cancel/{id}")
-    public ResponseEntity<OrderResponse> cancelOrderByID(@RequestParam Integer id) {
-        return null;
+    @PutMapping("/cancel/{id}")
+    public ResponseEntity<OrderDetailsResponse> cancelOrderByID(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.cancelOrderById(id));
     }
 
-    //view orders
     @GetMapping("/user/{id}")
-    public ResponseEntity<List<OrderResponse>> viewAllOrderByUserId(@RequestParam Integer id) {
-        return null;
+    public ResponseEntity<List<OrderDetailsResponse>> viewAllOrderByUserId(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.viewAllOrdersByUserId(id));
     }
 }

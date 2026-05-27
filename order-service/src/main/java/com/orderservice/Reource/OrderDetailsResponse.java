@@ -1,17 +1,19 @@
-package com.orderservice.Entity;
+package com.orderservice.Reource;
 
 import com.orderservice.Enum.OrderStatus;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
-@Entity(name = "orders")
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrderDetailsResponse {
+
     private Long orderId;
 
     private Long userId;
@@ -28,9 +30,7 @@ public class Order {
 
     private Long addressId;
 
-    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @CreationTimestamp
     private LocalDateTime createdDate;
 }

@@ -1,8 +1,10 @@
 package com.orderservice.Model;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class ProductDto {
 
     private Long productId;
@@ -13,5 +15,4 @@ public class ProductDto {
 
     private Integer quantity;
 
-    private Double totalAmount;
 }
