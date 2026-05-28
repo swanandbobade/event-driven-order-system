@@ -31,7 +31,7 @@ public class ProductController {
     }
 
     // Update Product
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<ProductResource> updateProductById(
             @PathVariable("id") Long productId,
             @Valid @RequestBody ProductDto product) {
@@ -40,7 +40,7 @@ public class ProductController {
     }
 
     // Delete Product
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/remove/{id}")
     public ResponseEntity<String> removeProductById(
             @PathVariable("id") Long productId) {
         return ResponseEntity.ok(service.deleteProduct(productId));

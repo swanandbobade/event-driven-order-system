@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: order-service
@@ -18,8 +21,8 @@ spring:
 
 external-services:
   product-service:
-    url: http://localhost:8081
+    url: http://localhost:8082
   address-service:
-    url: http://localhost:8081
+    url: http://localhost:8083
   user-service:
-    url: http://localhost:8081
+    url: http://localhost:8084
