@@ -1,4 +1,4 @@
-package com.productservice.Controller.Mapper;
+package com.productservice.Mapper;
 
 import com.productservice.Entity.Product;
 import com.productservice.Model.ProductDto;

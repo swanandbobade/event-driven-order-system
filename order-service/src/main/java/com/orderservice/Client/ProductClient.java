@@ -2,6 +2,7 @@ package com.orderservice.Client;
 
 import com.orderservice.Model.ProductDto;
 import org.springframework.cloud.openfeign.FeignClient;import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Optional;
 @FeignClient(
@@ -12,5 +13,5 @@ public interface ProductClient {
 
     //Change according to Product service endpoints
     @GetMapping("/product/{id}")
-    Optional<ProductDto> getProductById(Long productId);
+    Optional<ProductDto> getProductById(@PathVariable("id") Long productId);
 }

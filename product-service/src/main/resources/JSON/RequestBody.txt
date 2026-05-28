@@ -1,0 +1,9 @@
+
+New Product >
+
+{
+  "productName": "iPhone 15",
+  "category": "Electronics",
+  "productPrice": 79999.0,
+  "quantity": 10
+}

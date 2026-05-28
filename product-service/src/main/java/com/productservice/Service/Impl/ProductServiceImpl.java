@@ -1,6 +1,6 @@
 package com.productservice.Service.Impl;
 
-import com.productservice.Controller.Mapper.ProductMapper;
+import com.productservice.Mapper.ProductMapper;
 import com.productservice.Entity.Product;
 import com.productservice.Model.ProductDto;
 import com.productservice.Repository.ProductRepository;
