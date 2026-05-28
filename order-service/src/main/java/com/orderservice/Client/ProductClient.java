@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface ProductClient {
 
     //Change according to Product service endpoints
-    @GetMapping("/products/{id}")
+    @GetMapping("/product/{id}")
     Optional<ProductDto> getProductById(Long productId);
 }
